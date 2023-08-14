@@ -1,0 +1,144 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700,300);
+
+:root {
+  --bg: #130f0d;
+  --primary: #fd951f;
+  --primary-opaque: rgba(250, 152, 5, 0.139);
+  --white: #f0f0f9;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+*,
+button,
+input {
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  background-color: var(--bg);
+  color: var(--white);
+}
+
+header {
+  margin-top: 32px;
+  padding-bottom: 4rem;
+
+  color: var(--primary);
+
+  text-align: center;
+
+  animation: up 0.4s;
+}
+
+main {
+  margin: 0 auto;
+
+  width: 80vw;
+  max-width: 960px;
+
+  animation: up 0.4s 0.2s backwards;
+}
+
+footer {
+  margin-top: auto;
+  padding: 3.2rem 0 1.6rem;
+
+  text-align: center;
+
+  animation: up 0.4s 0.4s backwards;
+}
+
+footer::after {
+  content: "Feito com ♥️ por neanderdev";
+
+  font-size: 0.8rem;
+
+  opacity: 0.6;
+}
+
+@keyframes up {
+  from {
+    opacity: 0;
+
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Tags Input */
+.tag-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+
+  padding: 0.4rem;
+
+  border: 2px solid var(--primary-opaque);
+  border-radius: 0.2rem;
+
+  overflow-x: auto;
+}
+
+.tag-container,
+.tag-container input,
+.tag-container .tag {
+  background: rgba(0, 0, 0, 0.2);
+  color: var(--white);
+}
+
+.tag-container .tag {
+  margin: 0.4rem;
+  padding: 0.4rem 0.6rem;
+
+  display: flex;
+  align-items: center;
+
+  border-bottom: 0.01rem solid var(--primary);
+
+  font-size: 1.2rem;
+
+  cursor: default;
+}
+
+.tag i {
+  font-size: 0.8rem;
+  font-style: normal;
+
+  margin-left: 0.4rem;
+
+  transform: translateY(0.08rem);
+
+  cursor: pointer;
+}
+
+.close::after {
+  content: "✕";
+
+  height: 24px;
+  width: 24px;
+}
+
+.tag-container input {
+  padding: 0.4rem;
+
+  flex: 1;
+
+  border: 0;
+  outline: none;
+
+  font-size: 1.2rem;
+}
