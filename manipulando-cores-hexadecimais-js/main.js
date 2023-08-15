@@ -1,9 +1,36 @@
-const { body } = document;
+const background = document.querySelector(".background");
+const hexColor = document.querySelector(".hex-color");
+const luminosity = document.querySelector(".luminosity");
+const newHexColor = document.querySelector(".new-hex-color");
 
-try {
-  body.style.backgroundColor = lumiance("#6633cc", -0.6);
-} catch (e) {
-  console.log("Houve um erro: " + e.message);
+function handleChangeColor(hex) {
+  if (hex.length !== 4 && hex.length !== 7) {
+    console.log("Houve um erro: Invalid HEX");
+  }
+
+  try {
+    const newHexColorValue = lumiance(hex, parseFloat(luminosity.value));
+
+    background.style.backgroundColor = newHexColorValue;
+    newHexColor.value = newHexColorValue;
+  } catch (e) {
+    console.log("Houve um erro: " + e.message);
+  }
+}
+
+function handleChangeLuminosity(luminosity) {
+  if (hexColor.value.length !== 4 && hexColor.value.length !== 7) {
+    console.log("Houve um erro: Invalid HEX");
+  }
+
+  try {
+    const newHexColorValue = lumiance(hexColor.value, parseFloat(luminosity));
+
+    background.style.backgroundColor = newHexColorValue;
+    newHexColor.value = newHexColorValue;
+  } catch (e) {
+    console.log("Houve um erro: " + e.message);
+  }
 }
 
 // lógica para converter o hex em uma cor mais clara
