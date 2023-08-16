@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="style.css" />
+  
+    <script src="main.js" defer></script>
+
+    <title>Form Validation with HTML API</title>
+</head>
+<body>
+    <form action="">
+        <h2>Entrar na lista</h2>
+
+        <div class="input">
+            <input type="text" required />
+            
+            <label for="nome">Nome</label>
+
+            <span class="error"></span>
+        </div>
+
+        <div class="input">
+            <input type="email" required />
+            
+            <label for="email">Email</label>
+
+            <span class="error"></span>
+        </div>
+
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>
